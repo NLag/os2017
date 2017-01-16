@@ -1,0 +1,66 @@
+echo hello world (display a line of text)
+output:hello world
+
+passwd (change user password)
+output:Changing password for nlag.
+		(current) UNIX password: 
+		Retype new UNIX password:
+
+date (print or set the system date and time)
+output:Mon Jan 16 23:41:13 ICT 2017
+
+hostname (show or set the system's host name)
+output:NLag-K52F
+
+arch (print machine hardware name)
+output:x86_64
+
+uname -a (print system information --all)
+output:Linux NLag-K52F 4.4.0-57-generic #78-Ubuntu SMP Fri Dec 9 23:50:32 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+
+dmesg (print or control the kernel ring buffer)
+output:
+[  107.179158] wls1: send auth to 00:22:13:c4:f3:b2 (try 1/3)
+[  107.180952] wls1: authenticated
+[  107.181243] ath9k 0000:02:00.0 wls1: disabling HT as WMM/QoS is not supported by the AP
+[  107.181247] ath9k 0000:02:00.0 wls1: disabling VHT as WMM/QoS is not supported by the AP
+[  107.181806] wls1: associate with 00:22:13:c4:f3:b2 (try 1/3)
+[  107.185094] wls1: RX AssocResp from 00:22:13:c4:f3:b2 (capab=0x431 status=0 aid=12)
+[  107.185230] wls1: associated
+[  107.185267] IPv6: ADDRCONF(NETDEV_CHANGE): wls1: link becomes ready
+[  283.492317] perf interrupt took too long (2515 > 2500), lowering kernel.perf_event_max_sample_rate to 50000
+[ 1135.199519] perf interrupt took too long (5002 > 5000), lowering kernel.perf_event_max_sample_rate to 25000
+
+uptime (Tell how long the system has been running.)
+output:23:52:46 up 47 min,  1 user,  load average: 0.10, 0.11, 0.31
+
+whoami (print effective userid)
+output:nlag
+
+who (show who is logged on)
+output:nlag     tty7         2017-01-16 23:06 (:0)
+
+id (print real and effective user and group IDs)
+output:uid=1000(nlag) gid=1000(nlag) groups=1000(nlag),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)
+
+last (show a listing of last logged in users)
+output:
+nlag     tty7         :0               Fri Jan 13 16:14 - down   (-3:-11)
+reboot   system boot  4.4.0-57-generic Fri Jan 13 16:13 - 13:03  (-3:-9)
+nlag     tty7         :0               Thu Jan 12 19:56 - down   (00:01)
+reboot   system boot  4.4.0-57-generic Thu Jan 12 19:54 - 19:57  (00:02)
+nlag     tty7         :0               Thu Jan 12 19:30 - down   (00:03)
+reboot   system boot  4.4.0-57-generic Fri Jan 13 02:28 - 19:34  (-6:-54)
+nlag     tty7         :0               Thu Jan 12 20:14 - crash  (06:13)
+reboot   system boot  4.4.0-57-generic Thu Jan 12 20:12 - 19:34  (00:-38)
+
+finger (user information lookup program)
+output:
+Login     Name        Tty      Idle  Login Time   Office     Office Phone
+nlag      Nhat Linh   tty7       55  Jan 16 23:06 (:0)
+
+w (Show who is logged on and what they are doing.)
+output:
+ 00:01:16 up 56 min,  1 user,  load average: 0.41, 0.23, 0.26
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+nlag     tty7     :0               23:06   56:04   2:01   0.18s /sbin/upstart -
