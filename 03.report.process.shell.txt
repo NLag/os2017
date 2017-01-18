@@ -1,0 +1,38 @@
+ps -e
+output:
+15791 ?        00:00:00 kworker/u16:2
+16725 ?        00:00:00 kworker/0:0
+16772 pts/17   00:00:00 bash
+16876 ?        00:00:00 Web Content
+16910 ?        00:00:00 kworker/u16:1
+16918 ?        00:00:00 gvfsd-http
+16934 ?        00:00:00 kworker/u16:3
+16942 ?        00:00:00 unity-scope-hom
+16954 ?        00:00:00 unity-scope-loa
+16955 ?        00:00:00 unity-files-dae
+17011 pts/17   00:00:00 ps
+
+ps -e | grep gnome-caculato
+output:
+17087 ?        00:00:00 gnome-calculato
+
+cat /proc/17087/status
+output:
+CapBnd:	0000003fffffffff
+CapAmb:	0000000000000000
+Seccomp:	0
+Cpus_allowed:	ff
+Cpus_allowed_list:	0-7
+Mems_allowed:	00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	610
+nonvoluntary_ctxt_switches:	878
+
+kill -s STOP 17087
+no output
+
+kill -s CONT 17087
+no output
+
+kill -s KILL 17087
+no output

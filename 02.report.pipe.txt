@@ -1,0 +1,27 @@
+ls | grep "list"
+output:
+example list file
+example list folder
+
+wc -l /etc/passwd
+output:
+41 /etc/passwd
+
+free
+output:
+			  total        used        free      shared  buff/cache   available
+Mem:        3831592     1093512      882116      175056     1855964     2244860
+Swap:             0           0           0
+
+grep MemTotal /proc/meminfo
+output:
+MemTotal:        3831592 kB
+
+grep 'cpu cores' /proc/cpuinfo
+output:
+cpu cores	: 2
+cpu cores	: 2
+
+cd /home/nlag/Pictures ; find -type f -name '*.jpg' | wc -l
+output:
+1
