@@ -45,12 +45,12 @@ void *threadProduceFunction(void *params) {
 	item2->type = 0;
 	item2->amount =100;
 	item2->unit =1;
-	printf("item 1: Type: %d\tAmount: %d\tUnit: %d\n",item2->type,item2->amount,item2->unit );
+	printf("item 2: Type: %d\tAmount: %d\tUnit: %d\n",item2->type,item2->amount,item2->unit );
 	item* item3 = malloc(sizeof(item));
 	item3->type = 0;
 	item3->amount =100;
 	item3->unit =1;
-	printf("item 1: Type: %d\tAmount: %d\tUnit: %d\n",item3->type,item3->amount,item3->unit );
+	printf("item 3: Type: %d\tAmount: %d\tUnit: %d\n",item3->type,item3->amount,item3->unit );
 
 	produce(item1);
 	printf("Produce First item\nFirst:%d Last%d\n",first,last );
@@ -88,7 +88,7 @@ int main()
 	// argument to thread function
 	// main thread execution continues here
 	// [optional] wait for thread to finish
-	pthread_join(tid1, NULL);
+	
 	printf("Main thread after produce 3\n");
 
 	pthread_create(
@@ -100,7 +100,9 @@ int main()
 		// thread function name
 		NULL
 	);
-	pthread_join(tid2, NULL);
+
 	printf("Main thread after consume 2\n");	
+	pthread_join(tid1, NULL);
+	pthread_join(tid2, NULL);
 	return 0;
 }
